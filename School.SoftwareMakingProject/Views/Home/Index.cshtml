@@ -1,0 +1,61 @@
+﻿@using School.SoftwareMakingProject.Domain.DbEntities;
+@model User
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="stylesheet" href="/assets/css/calendar.css">
+    <title>Takvim - sesQ</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="calendar">
+            <div class="month">
+                <span class="btn-prev">
+                    <
+                </span>
+                <div class="date">Mayıs 2023</div>
+                <span class="btn-next">></span>
+            </div>
+            <div class="menu">
+                <div class="search">
+                    <input type="date" name="" id="" class="input-date">
+                    <button class="btn-search">Ara</button>
+                </div>
+                <div class="btn-today btn">Today</div>
+            </div>
+            <div class="weekdays">
+                <div>Pzt</div>
+                <div>Sl</div>
+                <div>Çrs</div>
+                <div>Prs</div>
+                <div>Cm</div>
+                <div>Cmt</div>
+                <div>Pz</div>
+            </div>
+            <div class="days">
+            </div>
+        </div>
+        <div class="todo">
+            <div class="welcome">
+                <h2>Hoşgeldin @Model.Kullanici_Adi</h2>
+                <a href="/logout" class="btn-log-out btn">Çıkış Yap</a>
+            </div>
+            <div class="todo-date">
+                <h1></h1>
+                <h3></h3>
+            </div>
+            <div class="events">
+            </div>
+            <a href="/calendar/add" class="btn-add-event btn">Etkinlik Ekle</a>
+        </div>
+    </div>
+    <script src="/assets/js/calendar.js"></script>
+</body>
+
+</html>

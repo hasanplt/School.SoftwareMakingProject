@@ -1,0 +1,41 @@
+.container{
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container form{
+    background-color: var(--calendarColor);
+    width: 80%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.8);
+}
+.container form h1{
+    color: var(--activeDayColor);
+}
+.container form .btn{
+    border: 1px solid var(--activeDayColor);
+    color: var(--activeDayColor);
+    transition: all 0.5s ease;
+    width: 100px;
+    left: calc(50% - 50px);
+}
+.container form > :nth-child(3) > *{
+    width: 40%;
+    display: inline-block;
+}
+.container form > :nth-child(3) > :first-child{
+    margin-right: 18%;
+}
+
+@media screen and (max-width: 768px) {
+    .container form .btn{
+        width: 100%;
+        left: 0;
+    }
+}
+@media screen and (min-width: 769px){
+    .container form{
+        width: 600px;
+    }
+}

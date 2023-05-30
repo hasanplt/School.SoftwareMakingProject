@@ -1,0 +1,98 @@
+body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("/assets/img/background.jpg") !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container{
+    height: 100vh;
+    background-color: var(--calendarColor) !important;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+.container .buton-box{
+    position: absolute;
+    top: 35px;
+    border: 1px solid var(--activeDayColor);
+    padding: 10px 10px;
+    border-radius: 30px;
+}
+.container .buton-box :first-child{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: var(--activeDayColor);
+    border-radius: 30px;
+    top: 0;
+    left: 0;
+    color: var(--calendarBorderColor);
+    transition: left 0.5s ease;
+}
+.container .buton-box button{
+    border: 0;
+    width: 100px;
+    text-align: center;
+    background-color: transparent;
+}
+.container form{
+    width: 80%;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+}
+.container form.sign-up > :nth-child(1),
+.container form.sign-up > :nth-child(2),
+.container form.sign-up > :nth-child(6),
+.container form.sign-up > :nth-child(7)
+{
+    width: 45%;
+    display: inline-block;
+}
+.container form.sign-up > :nth-child(1),
+.container form.sign-up > :nth-child(6){
+    margin-right: 8%;
+}
+.container form.sign-up{
+    transform: translateX(200%);
+    transition: transform 0.5s ease;
+}
+.container form.sign-in{
+    transform: translateX(0%);
+    transition: transform 0.5s ease;
+}
+.container form h1{
+    color: var(--activeDayColor);
+    font-weight: bold;
+}
+.container form .btn{
+    border: 1px solid var(--activeDayColor);
+    color: var(--activeDayColor);
+    transition: all 0.5s ease;
+    left: calc(50% - 50px);
+}
+.container form .btn:hover{
+    left: calc(50% - 60px);
+}
+.container form input::-webkit-outer-spin-button,
+.container form input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.container form input[type=number]{
+    -moz-appearance: textfield;
+}
+
+@media screen and (max-width: 768px) {
+    .container form .btn{
+        width: 100%;
+        left: 0;
+    }
+    .container form .btn:hover{
+        left: 0;
+    }
+}
+@media screen and (min-width: 769px){
+    .container{
+        width: 600px !important;
+    }
+}

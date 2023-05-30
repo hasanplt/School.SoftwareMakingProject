@@ -1,0 +1,33 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #454545 !important;
+    overflow-x: hidden;
+}
+.container{
+    --textColor: #454545;
+    --nextMonthDaytextColor: #bababa;
+    --calendarColor: #efefef;
+    --calendarBorderColor: #FFE6C7;
+    --activeDayColor: #FF6000;
+    color: var(--textColor);
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+}
+.btn{
+    cursor: pointer;
+    border: 1px solid var(--activeDayColor);
+    color: var(--activeDayColor);
+    padding: 5px 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    text-decoration: none;
+    position: relative;
+}
+.btn:hover{
+    letter-spacing: 3px;
+    border: 1px solid var(--calendarBorderColor) !important;
+    box-shadow: 0 0 5px 1px var(--activeDayColor), inset 0 0 3px 1px var(--activeDayColor);
+}

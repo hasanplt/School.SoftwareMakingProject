@@ -1,0 +1,305 @@
+@keyframes open{
+    from{
+        top: -100px;
+    }
+    to{
+        top: 0;
+    }
+}
+@keyframes close{
+    from{
+        top: 0px;
+    }
+    to{
+        top: 100px;
+    }
+}
+
+.container{
+    width: 100vw;
+    flex-direction: row;
+}
+.calendar{
+    background-color: var(--calendarColor);
+    width: 50%;
+    min-width: 300px;
+    padding-bottom: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    user-select: none;
+}
+.calendar .month{
+    margin-top: 16px;
+}
+.calendar .month span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    padding: 5px;
+    cursor: pointer;
+}
+.calendar .month span:hover{
+    background-color: #FF6000;
+    color: var(--calendarColor);
+}
+.calendar .month .date{
+    display: inline-block;
+    margin: 0 16px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.calendar .weekdays,
+.calendar .days{
+    width: 95.9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 15px;
+}
+.calendar .weekdays{
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+.calendar .weekdays div{
+    text-align: center;
+    width: 14.14%;
+    font-weight: bold;
+}
+.calendar .days{
+    border: 1px solid var(--calendarBorderColor);
+    border-top: none;
+}
+.calendar .days .day{
+    width: 14%;
+    height: 100px;
+    border: 1px solid var(--calendarBorderColor);
+    border-left: none;
+    border-bottom: none;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    color: var(--activeDayColor);
+}
+.calendar .days .day::before{
+    content: "";
+    position: absolute;
+    background-color: var(--activeDayColor);
+    width: 100%;
+    height: 99px;
+    top: -100px;
+    animation: close 0.5s ease;
+    opacity: 0.1;
+}
+.calendar .days .day:hover::before{
+    top: 0;
+    animation: open 0.5s ease;
+}
+.calendar .days .day:nth-of-type(7n){
+    border-right: none;
+}
+.calendar .days .day.next-month,
+.calendar .days .day.prev-month{
+    color: var(--nextMonthDaytextColor);
+}
+.calendar .days .day.today{
+    color: var(--calendarColor);
+    background-color: var(--activeDayColor);
+    font-size: 1.75rem;
+    font-weight: bold;
+    box-shadow: 0px -3px 10px 1px var(--activeDayColor);
+    border-color: var(--activeDayColor);
+}
+.calendar .days .day.today.next-month{
+    box-shadow: none;
+    opacity: 0.3;
+}
+.calendar .days .day.selected{
+    font-weight: bold;
+    font-size: 1.75rem;
+}
+.calendar .days .day.event{
+    position: relative;
+}
+.calendar .days .day.event::after{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 10px;
+    background-color: var(--activeDayColor);
+    border-radius: 10px;
+    bottom: 20px;
+}
+.calendar .days .day.today.event::after{
+    background-color: var(--calendarColor);
+}
+.calendar .menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin: 10px 0;
+}
+.calendar .btn-today:hover{
+    margin-right: -10px;
+}
+.calendar .search{
+    border: 1px solid var(--activeDayColor);
+    border-radius: 10px;
+}
+.calendar .search input{
+    border: none;
+    font-size: 1rem;
+    outline: 0;
+    background-color: transparent;
+    padding: 5px 10px;
+    color: var(--activeDayColor);
+    cursor: pointer;
+}
+.calendar .search input::-webkit-calendar-picker-indicator{
+    display: none;
+}
+.calendar .btn-search{
+    border: none;
+    border-left: 1px solid var(--activeDayColor);
+    color: var(--activeDayColor);
+    padding: 0px 10px;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 0 10px 10px 0;
+}
+.todo{
+    padding: 30px;
+    width: 700px;
+    max-height: 600px;
+    position: relative;
+}
+.todo .welcome{
+    color: var(--calendarColor);
+    position: relative;
+    background-color: #4b4b4b;
+    padding: 3px;
+    border-radius: 10px;
+}
+.todo .welcome h2{
+    margin-left: 16px;
+}
+.todo .welcome .btn-log-out{
+    position: absolute;
+    top: 25px;
+    right: 30px;
+}
+.todo .welcome .btn-log-out:hover{
+    right: 20px;
+}
+.todo .todo-date{
+    user-select: none;
+}
+.todo .todo-date h1{
+    color: var(--calendarColor);
+    display: inline-block;
+    font-size: 3rem;
+}
+.todo .todo-date h3{
+    color: var(--calendarBorderColor);
+    display: inline-block;
+    position: relative;
+    bottom: 0.5rem;
+    left: 1rem;
+}
+.todo .btn-add-event{
+    position: absolute;
+    right: 50px;
+}
+.todo .btn-add-event:hover{
+    right: 30px;
+}
+.todo .events{
+    color: var(--calendarColor);
+    overflow-y: auto;
+    width: 100%;
+}
+.todo .events .event{
+    border-left: 5px solid var(--activeDayColor);
+    height: 70px;
+    width: calc(100% - 15px);
+    padding-left: 10px;
+    position: relative;
+    margin-bottom: 25px;
+}
+.todo .events .event:hover{
+    background-color: #4b4b4b;
+}
+.todo .events .event .event-title{
+    padding-top: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.todo .events .event .event-time{
+    padding-top: 5px;
+}
+.todo .events .event span::after,
+.todo .events .event a::after{
+    position: absolute;
+    color: var(--calendarBorderColor);
+    border: 1px solid var(--calendarBorderColor);
+    width: 35px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    top: 20px;
+    text-align: center;
+    padding-top: 3px;
+    transition: box-shadow 0.5s ease;
+}
+.todo .events .event .replay::after{
+    right: 110px;
+    content: "\21BA";
+}
+.todo .events .event .check::after{
+    right: 110px;
+    content: "\2714";
+}
+.todo .events .event .cancel::after{
+    content: "\00D7";
+    right: 20px;
+}
+.todo .events .event .edit::after{
+    display: inline-block;
+    content: "\270E";
+    right: 65px;
+    padding-top: 0px;
+    padding-bottom: 3px;
+}
+.todo .events .event span:hover::after,
+.todo .events .event a:hover::after{
+    box-shadow: 0 0 5px 2px var(--activeDayColor), inset 0 0 5px 2px var(--activeDayColor);
+}
+.todo .events .event.complete{
+    text-decoration: line-through;
+}
+
+@media screen and (max-width: 1024px) {
+    .container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .calendar{
+        width: 92%;
+        margin: 30px 0 0 0;
+    }
+    .todo{
+        width: 80%;
+        margin-bottom: 60px;
+    }
+}

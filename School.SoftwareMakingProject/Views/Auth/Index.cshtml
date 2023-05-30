@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etkinlik - sesQ</title>
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="stylesheet" href="/assets/css/sign-in-sign-up.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container position-relative overflow-hidden">
+        <div class="buton-box">
+            <button class="btn-toggle left border-0">Giriş Yap</button>
+            <button class="btn-sign-in">Giriş Yap</button>
+            <button class="btn-sign-up">Üye Ol</button>
+        </div>
+        <form class="sign-in">
+            <div class="my-3">
+                <label for="sign-in-username" class="form-label">Kullanıcı Adı</label>
+                <input type="text" class="form-control" name="username" id="name">
+            </div>
+            <div class="my-3 mb-4">
+                <label for="sign-in-password" class="form-label">Şifre</label>
+                <input type="password" class="form-control" name="password" id="sign-in-password">
+            </div>
+            <button type="submit" class="btn">Giriş Yap</button>
+        </form>
+        <form class="sign-up">
+            <div class="my-1">
+                <label for="sign-up-name" class="form-label">Ad</label>
+                <input type="text" class="form-control" id="sign-up-name" name="firstname">
+            </div>
+            <div class="my-1">
+                <label for="sign-up-surname" class="form-label">Soyad</label>
+                <input type="text" class="form-control" id="sign-up-surname" name="lastname">
+            </div>
+            <div class="my-1">
+                <label for="sign-up-username" class="form-label">Kullanıcı Adı</label>
+                <input type="text" class="form-control" id="sign-up-username" name="username">
+            </div>
+            <div class="my-1">
+                <label for="sign-up-email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="sign-up-mail" name="email">
+            </div>
+            <div class="my-1">
+                <label for="sign-up-password" class="form-label">Şifre</label>
+                <input type="text" class="form-control" id="sign-up-password" name="password">
+            </div>
+            <div class="my-1">
+                <label for="sign-up-phone" class="form-label">Telefon Numarası</label>
+                <input type="number" class="form-control" id="sign-up-phone" name="telNo">
+            </div>
+            <div class="my-1">
+                <label for="sign-up-tc" class="form-label">TC Kimlik</label>
+                <input type="number" class="form-control" id="sign-up-tc" name="tcNo">
+            </div>
+            <div class="my-1">
+                <label for="sign-up-address" class="form-label">Adres</label>
+                <input type="text" class="form-control" id="sign-up-address" name="address">
+            </div>
+
+            <button type="submit" class="btn mt-4">Üye Ol</button>
+        </form>
+    </div>
+
+    <script src="/assets/js/sig-in-sign-up.js"></script>
+</body>
+
+</html>
